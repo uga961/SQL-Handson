@@ -535,9 +535,14 @@ select os, avg(used_price) as avg_price from used_phone_data  group by os;
 select brand_name, round(avg(used_price),2) as avg_price from used_phone_data  group by brand_name;
 select brand_name, FourG, round(avg(used_price),2) as avg_price from used_phone_data  group by brand_name,FourG;
 select brand_name, FourG, round(avg(used_price),2) as avg_price from used_phone_data where brand_name = 'Honor'  group by brand_name,FourG;
+
+/* HAVING BY */
+
 select brand_name, FourG, round(avg(used_price),2) as avg_price from used_phone_data  group by brand_name, FourG having brand_name = 'Honor';
 
 -- Where class is much faster than having and not always.
+
+/* ORDER BY*/
 
 select brand_name, round(avg(used_price),2) as avg_price from used_phone_data  group by brand_name order by avg_price desc;
 
@@ -580,4 +585,109 @@ limit 5;
 
 /* JOINS */
 
--- very important. 
+-- very important
+
+/*
+
+1. Inner join - common
+2. left join - left +  common
+3. right join - right + common
+4. Full join - All 
+5. Anti left Join - only right
+6. Anti right join - only left
+7. self join
+8. cross join - all possible combinations
+
+*/
+
+CREATE TABLE Employees (
+EmpID INT PRIMARY KEY,
+EmpName VARCHAR(50),
+DeptID INT);
+
+INSERT INTO Employees (EmpID, EmpName, DeptID) VALUES
+(1, 'Alice', 101),
+(2, 'Bob', 102),
+(3, 'Charlie', 103),
+(4, 'David', 101),
+(5, 'Eve', NULL);
+
+CREATE TABLE Departments (
+DeptID INT PRIMARY KEY,
+DeptName VARCHAR(50));
+
+INSERT INTO Departments (DeptID, DeptName) VALUES
+(101, 'HR'),
+(102, 'IT'),
+(103, 'Finance'),
+(104, 'Marketing');
+
+select * from employees;
+select * from departments;
+
+/* 
+SYNTAX -
+select table1_name.clm1_name, table1_name.clm2_name, table2_name.clm1_name
+from primary_table_name {to table}
+inner join {type of join} secondary_table_name {from which table}
+on table1_name.clm2_name = table2_name.clm3_name; {matching column info - primary key}
+
+
+aliase (asigning short name to table names to reduce repetations)
+
+select pt.clm1_name, pt.clm2_name, st.clm1_name
+from primary_table_name  pt {to table}
+inner join {type of join} secondary_table_name st {from which table}
+on pt.clm2_name = st.clm3_name; {matching column info - primary key} 
+
+*/
+
+/* INNER JOIN - Get employees with matching department */
+
+select Employees.EmpID, Employees.EmpName, Departments.DeptName
+from Employees
+inner join Departments
+on Employees.DeptID = Departments.DeptID;
+
+/* LEFT JOIN - Get all employees, including those without a department */
+
+select Employees.EmpID, Employees.EmpName, Departments.DeptName
+from Employees
+left join Departments
+on Employees.DeptID = Departments.DeptID;
+
+/* RIGHT JOIN - Get all departments, including those without employees */
+
+select Employees.EmpID, Employees.EmpName, Departments.DeptName
+from Employees
+right join Departments
+on Employees.DeptID = Departments.DeptID;
+
+/* FULL JOIN */
+
+-- MYSQL doesnt support full join so we will use union of left and right joins.
+
+select Employees.EmpID, Employees.EmpName, Departments.DeptName
+from Employees
+left join Departments
+on Employees.DeptID = Departments.DeptID
+union
+select Employees.EmpID, Employees.EmpName, Departments.DeptName
+from Employees
+right join Departments
+on Employees.DeptID = Departments.DeptID;
+
+/* CROSS JOIN - Get all combinations of employees and departments */
+
+SELECT Employees.EmpName, Departments.DeptName
+FROM Employees
+CROSS JOIN Departments;
+
+/* SELF JOIN - Find employees in the same department */
+
+-- Just need one table alone.
+
+SELECT e1. EmpName AS Employee1, e2.EmpName AS Employee2, e1.DeptID
+FROM Employees e1
+JOIN Employees e2
+ON e1.DeptID = e2.DeptID AND e1.EmpID <> e2.EmpID; -- <> two different people.
