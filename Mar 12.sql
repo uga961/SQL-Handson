@@ -691,3 +691,12 @@ SELECT e1. EmpName AS Employee1, e2.EmpName AS Employee2, e1.DeptID
 FROM Employees e1
 JOIN Employees e2
 ON e1.DeptID = e2.DeptID AND e1.EmpID <> e2.EmpID; -- <> two different people.
+
+
+/* Left Anti Join - base on left join */
+
+select c.custid, c.name
+from cust c
+left join order o
+on c.custid = o.custid
+where o.custid is NULL; -- will take which are not in other table so its left anti.
