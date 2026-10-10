@@ -722,3 +722,23 @@ GROUP BY d.DeptName
 HAVING COUNT(e.EmpID) >= 2
 ORDER BY avg_salary DESC
 LIMIT 3;
+
+
+/* JOIN's with more than two tables */
+
+select d.deptname, count(s.saleamount) as Q_sales, sum (s.saleamount) as total_sale, round(avg(s.saleamount),2) as avg_sale,
+    case 
+        when sum(s.saleamount) > 300000 then 'High'
+        when sum(s.saleamount) between 150000 and 300000 then 'Medium'
+    else 'Low'
+end as total_sales_category
+from employees e
+left join departments d
+    on e.deptid = d.deptid
+left join sales s
+    on e.empid = s.empid
+where s.saleamount >= 60000
+group by d.deptname
+having count(s.saleamount) >= 2
+order by sum(s.saleamount) desc
+limit 3;
