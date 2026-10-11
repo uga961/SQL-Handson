@@ -33,6 +33,12 @@ The scripts are organized by date and cover both foundational and intermediate S
 4. Use [Day 4.sql](./Day%204.sql) to strengthen intermediate SQL logic with set operations and filters.
 5. Finish with [Day 5.sql](./Day%205.sql) to practice advanced SQL features.
 
+## Assignments and Practice Exercises
+
+This repository also contains practice questions and assignment notes in the [Assignments](./Assignments/) folder.
+
+- [Assignments/Day4.md](./Assignments/Day4.md) — SQL practice questions covering selection, filtering, set operations, arithmetic, aggregates, stored procedures, and debugging.
+
 ## Notes
 
 - Many scripts create their own demo databases such as `class1`, `class2`, `class3`, `class4`, and `class5`.
@@ -67,6 +73,8 @@ SQL Handson/
 ├── Day 3.sql
 ├── Day 4.sql
 ├── Day 5.sql
+├── Assignments/
+│   └── Day4.md
 ├── README.md
 ```
 
