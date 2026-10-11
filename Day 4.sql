@@ -1,6 +1,6 @@
 /*
 ==============================================================
-SQL Practice - Mar 13
+SQL Practice - Day 4
 Topic: Set Operations, Filtering, and Intermediate SQL Concepts
 
 This file covers:

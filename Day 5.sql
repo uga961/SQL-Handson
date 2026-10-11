@@ -1,6 +1,6 @@
 /*
 ==============================================================
-SQL Practice - Mar 16
+SQL Practice - Day 5
 Topic: Triggers, Window Functions, and Views in MySQL
 
 This file covers:

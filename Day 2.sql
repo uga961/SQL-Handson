@@ -1,6 +1,6 @@
 /*
 ==============================================================
-SQL Practice - Mar 11
+SQL Practice - Day 2
 Topic: CRUD Operations and SQL Functions
 
 This file covers:

@@ -1,6 +1,6 @@
 /*
 ==============================================================
-SQL Practice - Mar 12
+SQL Practice - Day 3
 Topic: Data Analysis with GROUP BY, HAVING, ORDER BY, and Joins
 
 This file covers:

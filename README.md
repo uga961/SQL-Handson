@@ -19,19 +19,19 @@ The scripts are organized by date and cover both foundational and intermediate S
 
 | File | Topic | Main Concepts |
 |---|---|---|
-| [Mar 10.sql](./Mar%2010.sql) | Database and table basics | CREATE DATABASE, USE, CREATE TABLE, ALTER, RENAME, COPY/CLONE, DROP, TRUNCATE, INSERT |
-| [Mar 11.sql](./Mar%2011.sql) | Data update and SQL functions | UPDATE, DELETE, SELECT, numeric functions, string functions, date functions |
-| [Mar 12.sql](./Mar%2012.sql) | Data analysis and joins | GROUP BY, HAVING, ORDER BY, JOINS, aggregation, case-based analysis |
-| [Mar 13.sql](./Mar%2013.sql) | Intermediate SQL practice | UNION, UNION ALL, WHERE, LIKE, arithmetic operators, stored procedures |
-| [Mar 16.sql](./Mar%2016.sql) | Advanced SQL features | Triggers, window functions, ranking, lag/lead, views |
+| [Day 1.sql](./Day%201.sql) | Database and table basics | CREATE DATABASE, USE, CREATE TABLE, ALTER, RENAME, COPY/CLONE, DROP, TRUNCATE, INSERT |
+| [Day 2.sql](./Day%202.sql) | Data update and SQL functions | UPDATE, DELETE, SELECT, numeric functions, string functions, date functions |
+| [Day 3.sql](./Day%203.sql) | Data analysis and joins | GROUP BY, HAVING, ORDER BY, JOINS, aggregation, case-based analysis |
+| [Day 4.sql](./Day%204.sql) | Intermediate SQL practice | UNION, UNION ALL, WHERE, LIKE, arithmetic operators, stored procedures |
+| [Day 5.sql](./Day%205.sql) | Advanced SQL features | Triggers, window functions, ranking, lag/lead, views |
 
 ## Suggested Learning Flow
 
-1. Start from [Mar 10.sql](./Mar%2010.sql) to learn database and table setup.
-2. Continue with [Mar 11.sql](./Mar%2011.sql) to practice data updates and SQL functions.
-3. Move to [Mar 12.sql](./Mar%2012.sql) to learn aggregation, grouping, and joins.
-4. Use [Mar 13.sql](./Mar%2013.sql) to strengthen intermediate SQL logic with set operations and filters.
-5. Finish with [Mar 16.sql](./Mar%2016.sql) to practice advanced SQL features.
+1. Start from [Day 1.sql](./Day%201.sql) to learn database and table setup.
+2. Continue with [Day 2.sql](./Day%202.sql) to practice data updates and SQL functions.
+3. Move to [Day 3.sql](./Day%203.sql) to learn aggregation, grouping, and joins.
+4. Use [Day 4.sql](./Day%204.sql) to strengthen intermediate SQL logic with set operations and filters.
+5. Finish with [Day 5.sql](./Day%205.sql) to practice advanced SQL features.
 
 ## Notes
 
@@ -62,11 +62,11 @@ SELECT * FROM student;
 
 ```text
 SQL Handson/
-├── Mar 10.sql
-├── Mar 11.sql
-├── Mar 12.sql
-├── Mar 13.sql
-├── Mar 16.sql
+├── Day 1.sql
+├── Day 2.sql
+├── Day 3.sql
+├── Day 4.sql
+├── Day 5.sql
 ├── README.md
 ```
 

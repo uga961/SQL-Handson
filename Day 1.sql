@@ -1,6 +1,6 @@
 /*
 ==============================================================
-SQL Practice - Mar 10
+SQL Practice - Day 1
 Topic: DDL and DML Basics in MySQL
 
 This file covers:
