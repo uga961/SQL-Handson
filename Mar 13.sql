@@ -1,3 +1,19 @@
+/*
+==============================================================
+SQL Practice - Mar 13
+Topic: Set Operations, Filtering, and Intermediate SQL Concepts
+
+This file covers:
+- UNION and UNION ALL
+- Filtering with WHERE and LIKE
+- Arithmetic operations
+- Stored procedures
+- Advanced SQL practice with Student records
+
+These examples help build the foundation for more advanced query writing.
+==============================================================
+*/
+
 create database class4;
 
 use class4;

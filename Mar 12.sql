@@ -1,3 +1,19 @@
+/*
+==============================================================
+SQL Practice - Mar 12
+Topic: Data Analysis with GROUP BY, HAVING, ORDER BY, and Joins
+
+This file covers:
+- Building a used-phone dataset
+- GROUP BY and aggregate analysis
+- HAVING filters after grouping
+- ORDER BY for sorting results
+- JOIN concepts and real-world examples
+
+This file is intended for practicing practical SQL analysis.
+==============================================================
+*/
+
 create database class3;
 
 use class3;

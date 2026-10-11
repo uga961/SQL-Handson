@@ -1,4 +1,17 @@
-/* Trigger */
+/*
+==============================================================
+SQL Practice - Mar 16
+Topic: Triggers, Window Functions, and Views in MySQL
+
+This file covers:
+- Trigger creation and behavior
+- ROW_NUMBER, RANK, DENSE_RANK
+- LAG and LEAD analytic functions
+- SQL VIEW creation and usage
+
+Use this file for advanced SQL concepts and practical window analysis.
+==============================================================
+*/
 
 create database class5;
 use class5;

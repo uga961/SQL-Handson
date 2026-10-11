@@ -1,3 +1,18 @@
+/*
+==============================================================
+SQL Practice - Mar 10
+Topic: DDL and DML Basics in MySQL
+
+This file covers:
+- Creating and using databases
+- Creating, altering, renaming, copying, and dropping tables
+- Truncating tables
+- Inserting sample records into a table
+
+Use this file as a beginner-level guide to SQL table and data management.
+==============================================================
+*/
+
 -- This is a comment
 /* 
 This is also a comment

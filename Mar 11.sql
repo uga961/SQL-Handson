@@ -1,3 +1,17 @@
+/*
+==============================================================
+SQL Practice - Mar 11
+Topic: CRUD Operations and SQL Functions
+
+This file covers:
+- Creating a table for sample people records
+- UPDATE and DELETE operations
+- SELECT queries with filters
+- Numeric, string, and date functions
+- Working with aggregate logic on example employee and event data
+==============================================================
+*/
+
 create database class2;
 
 use class2;
