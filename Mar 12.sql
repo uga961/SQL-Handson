@@ -700,3 +700,45 @@ from cust c
 left join order o
 on c.custid = o.custid
 where o.custid is NULL; -- will take which are not in other table so its left anti.
+
+
+/* JOINS with more filters */
+
+
+SELECT
+    d.DeptName,
+    COUNT(e.EmpID) AS employee_count,
+    ROUND(AVG(e.Salary), 2) AS avg_salary,
+    CASE
+        WHEN AVG(e.Salary) > 75000 THEN 'High'
+        WHEN AVG(e.Salary) BETWEEN 60000 AND 75000 THEN 'Medium'
+        ELSE 'Low'
+    END AS salary_category
+FROM employees e
+JOIN departments d
+    ON e.DeptID = d.DeptID
+WHERE e.Salary >= 50000
+GROUP BY d.DeptName
+HAVING COUNT(e.EmpID) >= 2
+ORDER BY avg_salary DESC
+LIMIT 3;
+
+
+/* JOIN's with more than two tables */
+
+select d.deptname, count(s.saleamount) as Q_sales, sum (s.saleamount) as total_sale, round(avg(s.saleamount),2) as avg_sale,
+    case 
+        when sum(s.saleamount) > 300000 then 'High'
+        when sum(s.saleamount) between 150000 and 300000 then 'Medium'
+    else 'Low'
+end as total_sales_category
+from employees e
+left join departments d
+    on e.deptid = d.deptid
+left join sales s
+    on e.empid = s.empid
+where s.saleamount >= 60000
+group by d.deptname
+having count(s.saleamount) >= 2
+order by sum(s.saleamount) desc
+limit 3;

@@ -274,6 +274,7 @@ select current_timestamp as currenttime;
 
 select event_name, date_format(event_date, '%M') as event_month from events; -- 'm' for the month number & 'M' for the month name
 select event_name, date_format(event_date, '%W') as event_week from events; -- 'm' for the week number & 'M' for the week name
+select event_name, date_format(event_date, '%Y') as event_week from events; -- 'y' for the short year & 'Y' for the full year
 
 -- 7. LAST_DAY (Last of the month)
 
