@@ -37,7 +37,6 @@ The scripts are organized by date and cover both foundational and intermediate S
 
 This repository also contains practice questions and assignment notes in the [Assignments](./Assignments/) folder.
 
-- [Assignments/Day4.md](./Assignments/Day4.md) — SQL practice questions covering selection, filtering, set operations, arithmetic, aggregates, stored procedures, and debugging.
 
 ## Notes
 
@@ -74,7 +73,6 @@ SQL Handson/
 ├── Day 4.sql
 ├── Day 5.sql
 ├── Assignments/
-│   └── Day4.md
 ├── README.md
 ```
 
