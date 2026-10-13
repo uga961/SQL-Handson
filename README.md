@@ -1,89 +1,142 @@
-# SQL Handson Practice
+# SQL Hands-On Practice
 
-This repository is a collection of MySQL SQL practice scripts created during the SQL Primer course. Each file focuses on a specific topic and can be executed in a MySQL client such as MySQL Workbench, phpMyAdmin, or the MySQL command line.
+[![Database](https://img.shields.io/badge/Database-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Tool](https://img.shields.io/badge/IDE-MySQL%20Workbench-00758F?style=flat-square&logo=mysql&logoColor=white)](https://www.mysql.com/products/workbench/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+
+A structured collection of MySQL practice scripts and exercises developed during the **SQL Primer** course. This repository provides a day-by-day roadmap covering foundational DDL/DML operations to advanced relational database concepts like window functions, stored procedures, triggers, and analytical views.
+
+---
 
 ## Overview
 
-The scripts are organized by date and cover both foundational and intermediate SQL concepts. They are designed to help learners practice:
+This repository serves as a hands-on guide for learning SQL using **MySQL Workbench**. The scripts follow a progressive learning path designed to help developers and analysts build, query, and optimize relational databases through practical SQL execution.
 
-- Database creation and management
-- Table structure design and updates
-- Inserting, updating, and deleting records
-- Querying data using SELECT and WHERE
-- SQL functions for numbers, strings, and dates
-- Grouping, filtering, sorting, and aggregation
-- Joins and set operations
-- Stored procedures, triggers, window functions, and views
+---
 
-## File Summary
+## Key Features
 
-| File | Topic | Main Concepts |
-|---|---|---|
-| [Day 1.sql](./Day%201.sql) | Database and table basics | CREATE DATABASE, USE, CREATE TABLE, ALTER, RENAME, COPY/CLONE, DROP, TRUNCATE, INSERT |
-| [Day 2.sql](./Day%202.sql) | Data update and SQL functions | UPDATE, DELETE, SELECT, numeric functions, string functions, date functions |
-| [Day 3.sql](./Day%203.sql) | Data analysis and joins | GROUP BY, HAVING, ORDER BY, JOINS, aggregation, case-based analysis |
-| [Day 4.sql](./Day%204.sql) | Intermediate SQL practice | UNION, UNION ALL, WHERE, LIKE, arithmetic operators, stored procedures |
-| [Day 5.sql](./Day%205.sql) | Advanced SQL features | Triggers, window functions, ranking, lag/lead, views |
+* 📊 **Structured Curriculum:** Day-by-day modules covering SQL fundamentals to advanced features.
+* 🛠️ **MySQL Workbench Ready:** Fully formatted `.sql` scripts with explicit delimiter statements for easy execution.
+* 📝 **Annotated Code:** Detailed inline comments explaining syntax, execution order, and database logic.
+* 🧠 **Practical Assignments:** Includes dedicated practice problems and query challenges in the `Assignments/` folder.
 
-## Suggested Learning Flow
+---
 
-1. Start from [Day 1.sql](./Day%201.sql) to learn database and table setup.
-2. Continue with [Day 2.sql](./Day%202.sql) to practice data updates and SQL functions.
-3. Move to [Day 3.sql](./Day%203.sql) to learn aggregation, grouping, and joins.
-4. Use [Day 4.sql](./Day%204.sql) to strengthen intermediate SQL logic with set operations and filters.
-5. Finish with [Day 5.sql](./Day%205.sql) to practice advanced SQL features.
+## Repository Architecture
 
-## Assignments and Practice Exercises
+```text
+SQL-Handson/
+│
+├── Day 1.sql            # Database & Table Basics (DDL & Basic DML)
+├── Day 2.sql            # Data Manipulation & Built-in Functions
+├── Day 3.sql            # Data Analysis, Aggregations & Joins
+├── Day 4.sql            # Set Operations, Filtering & Stored Procedures
+├── Day 5.sql            # Advanced Features (Triggers, Window Functions, Views)
+├── Assignments/         # Practice sets and assignment queries
+└── README.md            # Project documentation
 
-This repository also contains practice questions and assignment notes in the [Assignments](./Assignments/) folder.
+```
+
+---
+
+## Curriculum Breakdown
+
+| Module | Topic | Core Concepts & Commands |
+| --- | --- | --- |
+| **[Day 1.sql](https://www.google.com/search?q=./Day%25201.sql)** | Database & Table Setup | `CREATE DATABASE`, `USE`, `CREATE TABLE`, `ALTER`, `RENAME`, `DROP`, `TRUNCATE`, `INSERT` |
+| **[Day 2.sql](https://www.google.com/search?q=./Day%25202.sql)** | Data Updates & Functions | `UPDATE`, `DELETE`, `SELECT`, Numeric, String, and Date/Time Functions |
+| **[Day 3.sql](https://www.google.com/search?q=./Day%25203.sql)** | Data Analysis & Joins | `GROUP BY`, `HAVING`, `ORDER BY`, Inner/Outer `JOINS`, Aggregations, `CASE` Statements |
+| **[Day 4.sql](https://www.google.com/search?q=./Day%25204.sql)** | Intermediate Queries | `UNION`, `UNION ALL`, `LIKE`, Pattern Matching, Arithmetic Operators, Stored Procedures |
+| **[Day 5.sql](https://www.google.com/search?q=./Day%25205.sql)** | Advanced SQL Features | Triggers, Window Functions (`ROW_NUMBER`, `RANK`, `LAG`, `LEAD`), Views |
+
+---
+
+## Getting Started with MySQL Workbench
+
+### Prerequisites
+
+Make sure you have **MySQL Server** and **MySQL Workbench** installed on your machine.
+
+* Download from [MySQL Official Downloads](https://www.google.com/search?q=https://dev.mysql.com/downloads/workbench/)
+
+### Execution Instructions
+
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/uga961/SQL-Handson.git](https://github.com/uga961/SQL-Handson.git)
+
+```
 
 
-## Notes
+2. **Launch MySQL Workbench** and connect to your MySQL Server instance.
+3. Open any script file (`File -> Open SQL Script...` or `Ctrl + Shift + O`).
+4. Execute the script line-by-line using `Ctrl + Enter` or run the whole file using `Ctrl + Shift + Enter`.
 
-- Many scripts create their own demo databases such as `class1`, `class2`, `class3`, `class4`, and `class5`.
-- Some examples use `DELIMITER` blocks because they define stored procedures and triggers.
-- These scripts are educational and intended for practice rather than production database design.
-- The code is written in a beginner-friendly style with comments to explain the syntax and purpose of each command.
+---
 
-## Typical MySQL Execution Flow
+## Code Blueprint Example
+
+Here is a quick look at the typical execution flow used throughout the scripts:
 
 ```sql
--- Example
+-- Create and switch to a dedicated working database
 CREATE DATABASE IF NOT EXISTS class1;
 USE class1;
 
+-- Define table schema
 CREATE TABLE student (
-    Roll_no INT,
-    Student_name VARCHAR(50)
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_name VARCHAR(50) NOT NULL,
+    enrollment_date DATE
 );
 
-INSERT INTO student (Roll_no, Student_name)
-VALUES (1, 'Alice');
+-- Insert sample records
+INSERT INTO student (student_name, enrollment_date)
+VALUES ('Alice', CURDATE());
 
+-- Retrieve and analyze data
 SELECT * FROM student;
+
 ```
 
-## Repository Structure
+> **Note:** Scripts defining Stored Procedures or Triggers utilize custom `DELIMITER //` blocks to ensure smooth execution in MySQL Workbench.
 
-```text
-SQL Handson/
-├── Day 1.sql
-├── Day 2.sql
-├── Day 3.sql
-├── Day 4.sql
-├── Day 5.sql
-├── Assignments/
-├── README.md
-```
+---
 
-## Learning Outcome
+## Key Learning Outcomes
 
-By the end of these files, a learner should be comfortable with:
+By working through these scripts, you will master:
 
-- Creating and managing databases and tables
-- Writing CRUD operations
-- Using SQL functions and filters
-- Building analytical queries with groupings and ordering
-- Applying joins and set-based logic
-- Using advanced SQL constructs like procedures, triggers, and views
+* Designing schema layouts and executing CRUD operations.
+* Writing analytical queries using aggregate functions, groupings, and table joins.
+* Performing complex window calculations (`RANK`, `DENSE_RANK`, `LAG`/`LEAD`).
+* Automating database logic using **Stored Procedures**, **Triggers**, and reusable **Views**.
 
+---
+
+## Contributing
+
+Suggestions, bug fixes, and additional SQL exercises are welcome!
+
+1. **Fork** the repository.
+2. **Create** a new branch (`git checkout -b feature/SQL-Challenge`).
+3. **Commit** your enhancements (`git commit -m 'Add new join challenge'`).
+4. **Push** to the branch (`git push origin feature/SQL-Challenge`).
+5. **Open** a Pull Request.
+
+---
+
+## Author
+
+**Vaddi Ugandhar**
+
+* **GitHub:** [@uga961](https://www.google.com/search?q=https://github.com/uga961)
+
+---
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for details.
+
+---
